@@ -31,7 +31,7 @@ function kroppsam_scripts_and_styles() {
         'kroppsam-style', 
         get_stylesheet_uri(), 
         array(), 
-        file_exists( get_stylesheet_directory() . '/style.css' ) ? filemtime( get_stylesheet_directory() . '/style.css' ) : '1.0.1' 
+        file_exists( get_stylesheet_directory() . '/style.css' ) ? filemtime( get_stylesheet_directory() . '/style.css' ) : '1.0' 
     );
 
     // JS för hamburgermeny
