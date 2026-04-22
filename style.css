@@ -746,3 +746,7 @@ a:focus {
 .menu-toggle:hover .hamburger-line {
     background-color: var(--orange);
 }
+
+.this-is-a-deletion {
+    padding:0;
+}
