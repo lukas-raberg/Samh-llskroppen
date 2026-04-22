@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/waukxthh/public_html/wp-content/themes/kroppsam/
+    - /bin/rsync -avz --exclude '.git*' ./ $DEPLOYPATH
