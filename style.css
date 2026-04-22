@@ -12,6 +12,7 @@ Copyright: 2026 Samhällskroppen
 */
 
 :root {
+    /* Typografi - Storlekar */
     --display: 3rem;
     --xxxl: 4rem;
     --xxl: 3.25rem;
@@ -22,42 +23,50 @@ Copyright: 2026 Samhällskroppen
     --xs: 1rem;
     --xxs: 1rem;
 
+    /* Färger */
     --black: #222222;
     --white: #EBECE9;
     --offwhite: #DADBD7;
     --darkgray: #333333;
     --gray: #5C5C5C;
     --lightgray: #A49F9F;
-    --darkorange:#E93A0B;
+    --darkorange: #E93A0B;
     --orange: #F55A31;
     --orangelight: #ECA593;
+
+    /* Layout & Spacing */
+    --padding-main: 1.75rem;
+    --header-height: 8rem;
+    --container-narrow: 36rem;
+    --container-wide: 48rem;
+    --section-margin: 4rem;
+
+    /* Linjer & Borders */
+    --border-thin: 0.063rem solid var(--lightgray);
+    --border-thick: 1rem solid var(--orange);
+    --border-accent: 0.5rem solid var(--orange);
+
+    /* Animationer */
+    --transition-fast: all 0.2s ease;
+    --transition-slow: all 0.3s ease-in-out;
+
+    /* Typsnitt */
+    --font-serif: "Alegreya", serif;
+    --font-sans: "Inter", sans-serif;
 }
 
+/* Responsiva textstorlekar */
 @media (min-width: 1000px) {
     :root {
-        --display: 3.25rem;
-        --xxxl: 4.25rem;
-        --xxl: 3.5rem;
-        --xl: 2.75rem;
-        --l: 2.25rem;
-        --m: 1.75rem;
-        --s: 1.5rem;
-        --xs: 1.25rem;
-        --xxs: 1rem;
+        --display: 3.25rem; --xxxl: 4.25rem; --xxl: 3.5rem; --xl: 2.75rem;
+        --l: 2.25rem; --m: 1.75rem; --s: 1.5rem; --xs: 1.25rem;
     }
 }
 
 @media (min-width: 1200px) {
     :root {
-        --display: 3.5rem;
-        --xxxl: 4.5rem;
-        --xxl: 3.75rem;
-        --xl: 3rem;
-        --l: 2.5rem;
-        --m: 2rem;
-        --s: 1.75rem;
-        --xs: 1.5rem;
-        --xxs: 1.25rem;
+        --display: 3.5rem; --xxxl: 4.5rem; --xxl: 3.75rem; --xl: 3rem;
+        --l: 2.5rem; --m: 2rem; --s: 1.75rem; --xs: 1.5rem;
     }
 }
 
@@ -164,13 +173,12 @@ header,
 
 header[role="banner"] {
     background: var(--white);
-    height: 8rem;
+    border-right: var(--border-thick);
+    height: var(--header-height);
+    padding: var(--padding-main);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 1rem;
-    border-right: 1rem solid var(--orange);
 }
 
 .entry-header-single h1.entry-title {
@@ -197,34 +205,28 @@ footer h2 {
 }
 
 main {
-    padding-top:1rem;
-    margin:0 1rem;
+    padding-top: 1rem;
+    margin: 0 var(--padding-main);
 }
 
 @media (min-width: 600px) {
-    main,
-    .footer-inner  {
-        max-width: 36rem;
-        margin:0 auto;
+    main, .footer-inner {
+        max-width: var(--container-narrow);
+        margin: 0 auto;
     }
 }
-
 
 @media (min-width: 1200px) {
-    main,
-    .footer-inner  {
-        max-width: 48rem;
-        margin:0 auto;
+    main, .footer-inner {
+        max-width: var(--container-wide);
     }
 }
-
-
 
 footer {
     background: var(--darkgray);
-    margin:4rem 0 0 0;
-    padding:2.25rem 1.75rem;
-    border-right: 1rem solid var(--orange);
+    margin: var(--section-margin) 0 0 0;
+    padding: 2.25rem var(--padding-main);
+    border-right: var(--border-thick);
 }
 
 .end {
@@ -277,14 +279,13 @@ aside p {
 }
 
 hr {
-    margin:1.5rem 0;
+    margin: 1.5rem 0;
     border: 0;
-    height:0.063rem;
-    border-top:0.063rem solid var(--gray);
+    border-top: 0.063rem solid var(--gray);
 }
 
 .start {
-    border-bottom:0.063rem solid var(--lightgray);
+    border-bottom: var(--border-thin);
     padding:3rem 0;
 }
 
@@ -293,7 +294,7 @@ hr {
 }
 
 article h2 {
-	font-family: "Alegreya", serif;
+	font-family: var(--font-serif);
 	font-weight: 700;
     color: var(--darkorange);
     font-size: var(--xl);
@@ -357,7 +358,7 @@ h4 {
 a {
     color: inherit;
     text-decoration: none;
-    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+    transition: var(--transition-fast);
 }
 
 a:hover {
@@ -389,12 +390,12 @@ a:hover {
 }
 
 blockquote {
-	border-left: .5rem solid var(--orange);
+	border-left: var(--border-accent);
+    padding-left: 1.5rem;
 	margin-block-start: 1.5rem;
 	margin-block-end: 1.5rem;
 	margin-inline-start:0;
 	margin-inline-end:0;
-	padding-left:1.5rem;
 	padding-bottom:0;
 }
 
@@ -411,10 +412,10 @@ blockquote p {
 }
 
 .wp-block-group {
-    border-right: .5rem solid var(--orange);
+    border-right: var(--border-accent);
     background-color: var(--white);
+    padding: 2rem;
     margin:1rem 0 2rem 0;
-    padding:2rem;
 }
 
 .wp-block-group-reflection {
@@ -437,7 +438,7 @@ blockquote p {
 
 
 .post-navigation {
-    border-top:0.063rem solid var(--lightgray);
+    border-top: var(--border-thin);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -475,11 +476,9 @@ blockquote p {
 }
 
 .nav-title a {
-    font-family: "Alegreya", serif;
+    font-family: var(--font-serif);
     font-size: var(--l);
-    font-weight: 700;
     color: var(--darkorange);
-    text-decoration: none;
 }
 
 .nav-title a:hover {
@@ -603,7 +602,7 @@ li h2 {
 }
 
 .list-all {
-    border-bottom:0.063rem solid var(--lightgray);
+    border-bottom: var(--border-thin);
     padding:1rem 0;
 }
 
