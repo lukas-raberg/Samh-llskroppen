@@ -28,6 +28,7 @@ Copyright: 2026 Samhällskroppen
     --white: #EBECE9;
     --offwhite: #DADBD7;
     --darkgray: #333333;
+    --middlegray: #484848;
     --gray: #5C5C5C;
     --lightgray: #A49F9F;
     --darkorange: #E93A0B;
@@ -298,10 +299,9 @@ hr.wp-block-separator,
 article h2 {
 	font-family: var(--font-serif);
 	font-weight: 700;
-    color: var(--darkorange);
+    color: var(--middlegray);
     font-size: var(--xl);
     line-height: 130%;
-
     overflow-wrap: break-word;
     margin:1.25rem 0 0.75rem 0;
 }
@@ -523,23 +523,17 @@ p.last-updated {
     font-size: var(--xxs);
 }
 
-/*
-.start.category-utblick {
-    background: var(--orangelight);
-    padding-left:2rem;
-    padding-right: 2rem;
-}
-*/
-
 .category-wrapper {
-    font-size: var(--xxs);
-    font-weight: 600;
-    text-transform: uppercase;
     display: flex;
     gap: 0.313rem;
     align-items: center;
     padding:.5rem 0;
-    color: var(--darkgray);
+}
+
+.theme {
+    font-size: var(--m);
+    font-weight: 400;
+    color: var(--orange);
 }
 
 .category-label {
@@ -561,7 +555,7 @@ p.last-updated {
     font-weight: 400;
     font-size: var(--xl);
     line-height: 130%;
-    color: var(--gray);
+    color: var(--darkorange);
     font-weight:400;
 }
 

@@ -59,7 +59,7 @@ function kroppsam_post_categories() {
             }
         }
         if ( ! empty( $cat_output ) ) {
-            echo '<div class="category-wrapper">' . implode( ', ', $cat_output ) . '</div>';
+            echo '<div class="category-wrapper"><span class="theme">' . implode( ', ', $cat_output ) . '</span></div>';
         }
     }
 }
