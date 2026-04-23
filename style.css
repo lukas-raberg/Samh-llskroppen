@@ -561,8 +561,9 @@ p.last-updated {
 
 .entry-title {
     display: inline;   /* Detta gör att rubriken börjar på samma rad som taggen */
-    margin: 0 0 1rem 0;         /* Viktigt: nollställ marginaler */
+    margin: 0 0 .5rem 0;         /* Viktigt: nollställ marginaler */
     vertical-align: baseline;
+    line-height: 125%;
 }
 
 .thin {
@@ -594,7 +595,7 @@ li h2 {
     font-family: 'Alegreya', serif;
     font-weight: 700;
     font-size: var(--m);
-    color: var(--orange);
+    color: var(--middle);
 }
 
 .list-all {
@@ -603,17 +604,22 @@ li h2 {
 }
 
 .category-wrapper-small {
-    font-size: var(--xxs);
-    font-weight: 600;
-    text-transform: uppercase;
+    font-family: var(--font-serif);
+    font-size: var(--s);
+    font-weight: 400;
     display: flex;
     gap: 0.313rem;
     align-items: center;
-    padding:.5rem 0;
-    color: var(--darkgray);
+    padding:0;
+    color: var(--orange);
 }
 
-
+.theme-small {
+    font-size: var(--xs);
+    font-weight: 400;
+    color: var(--orange);
+    padding:0;
+}
 
 .menu-toggle {
     display: block; /* Visa hamburgaren */

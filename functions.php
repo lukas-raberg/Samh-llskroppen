@@ -47,19 +47,24 @@ add_action( 'wp_enqueue_scripts', 'kroppsam_scripts_and_styles' );
 
 /**
  * Funktion för att visa kategorier (filtrerar bort Okategoriserat)
- * Används i index.php och page-all.php för att undvika duplicerad kod.
+ * @param string $class Klassnamnet för span-elementet (default: 'theme')
  */
-function kroppsam_post_categories() {
+function kroppsam_post_categories( $class = 'theme' ) {
     $categories = get_the_category();
     if ( ! empty( $categories ) ) {
         $cat_output = array();
         foreach ( $categories as $category ) {
+            // Filtrerar bort både engelska och svenska standard-slugs/namn
             if ( $category->slug !== 'uncategorized' && $category->name !== 'Okategoriserat' ) {
                 $cat_output[] = esc_html( $category->name );
             }
         }
+        
         if ( ! empty( $cat_output ) ) {
-            echo '<div class="category-wrapper"><span class="theme">' . implode( ', ', $cat_output ) . '</span></div>';
+            // Här använder vi variabeln $class istället för ett hårdkodat värde
+            echo '<div class="' . esc_attr( $class ) . '">';
+            echo '<span class="' . esc_attr( $class ) . '">' . implode( ', ', $cat_output ) . '</span>';
+            echo '</div>';
         }
     }
 }

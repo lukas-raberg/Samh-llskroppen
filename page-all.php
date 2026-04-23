@@ -23,9 +23,7 @@ get_header(); ?>
                 
                 <li class="list-all">
                     
-                    <?php 
-                    kroppsam_post_categories(); 
-                    ?>
+                    <?php kroppsam_post_categories( 'theme-small' ); ?>
 
                     <?php
                     $tags = get_the_tags();
