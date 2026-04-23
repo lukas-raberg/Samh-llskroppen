@@ -14,12 +14,12 @@ Copyright: 2026 Samhällskroppen
 :root {
     /* Typografi - Storlekar */
     --display: 3rem;
-    --xxxl: 4rem;
-    --xxl: 3.25rem;
-    --xl: 2.5rem;
-    --l: 2rem;
-    --m: 1.5rem;
-    --s: 1.25rem;
+    --xxxl: 3.75rem;
+    --xxl: 3rem;
+    --xl: 2.25rem;
+    --l: 1.75rem;
+    --m: 1.25rem;
+    --s: 1rem;
     --xs: 1rem;
     --xxs: 1rem;
 
@@ -59,16 +59,40 @@ Copyright: 2026 Samhällskroppen
 /* Responsiva textstorlekar */
 @media (min-width: 1000px) {
     :root {
-        --display: 3.25rem; --xxxl: 4.25rem; --xxl: 3.5rem; --xl: 2.75rem;
-        --l: 2.25rem; --m: 1.75rem; --s: 1.5rem; --xs: 1.25rem;
+        --display: 3rem; 
+        --xxxl: 4rem; 
+        --xxl: 3.25rem; 
+        --xl: 2.5rem;
+        --l: 2.rem; 
+        --m: 1.5rem; 
+        --s: 1.25rem; 
+        --xs: 1rem;
     }
 }
 
 @media (min-width: 1200px) {
     :root {
-        --display: 3.5rem; --xxxl: 4.5rem; --xxl: 3.75rem; --xl: 3rem;
-        --l: 2.5rem; --m: 2rem; --s: 1.75rem; --xs: 1.5rem;
+        --display: 3.25rem; 
+        --xxxl: 4.25rem; 
+        --xxl: 3.5rem; 
+        --xl: 2.75rem;
+        --l: 2.25rem; 
+        --m: 1.75rem; 
+        --s: 1.5rem; 
+        --xs: 1.25rem;
     }
+
+    /* @media (min-width: 1200px) {
+    :root {
+        --display: 3.5rem; 
+        --xxxl: 4.5rem; 
+        --xxl: 3.75rem; 
+        --xl: 3rem;
+        --l: 2.5rem; 
+        --m: 2rem; 
+        --s: 1.75rem; 
+        --xs: 1.5rem;
+    } */
 }
 
 /* alegreya-regular - latin */
