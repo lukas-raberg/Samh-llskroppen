@@ -283,7 +283,7 @@ footer h3 {
 
 footer p {
     color: var(--offwhite);
-    font-weight:600;
+    font-weight:400;
 }
 
 
@@ -635,13 +635,13 @@ li h2 {
     gap: 0.313rem;
     align-items: center;
     padding:0;
-    color: var(--orange);
+    color: var(--darkorange);
 }
 
 .theme-small {
     font-size: var(--xs);
     font-weight: 400;
-    color: var(--orange);
+    color: var(--darkorange);
     padding:0;
 }
 
