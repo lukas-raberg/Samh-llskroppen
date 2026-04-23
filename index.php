@@ -8,12 +8,8 @@ get_header(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'start' ); ?>>
 
         <?php kroppsam_post_categories(); ?>
-            <?php if ( has_post_thumbnail() ) : ?>
-            <div class="post-featured-image">
-                <?php the_post_thumbnail('large'); // Options: 'thumbnail', 'medium', 'large', 'full' ?>
-            </div>  
-
-        <?php endif; ?>
+        
+        <?php get_template_part( 'template-parts/image-hero' ); ?>
             
         <a href="<?php echo esc_url( get_permalink() ); ?>" class="article-header-link">
             <?php 

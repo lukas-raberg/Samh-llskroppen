@@ -771,6 +771,50 @@ a:focus {
     background-color: var(--orange);
 }
 
-.this-is-a-deletion {
-    padding:0;
+
+.glass-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Tvingar ALLA bilder till 16:9 format */
+    overflow: hidden;
+    background-color: #000;
+    margin-bottom: 20px; /* Mellanrum mellan inlägg */
+}
+
+.glass-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px) brightness(0.6);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.glass-foreground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    
+    /* Detta gör att bilden aldrig beskärs, oavsett form */
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    
+    /* Safari-säkerhet */
+    object-fit: contain !important;
+}
+
+/* Valfritt: Om bilden är liggande kan vi göra bakgrunden mindre suddig 
+   eller dölja den helt om man föredrar att bilden täcker allt */
+.is-landscape .glass-foreground {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Liggande bilder fyller ut boxen helt */
 }

@@ -8,11 +8,7 @@ get_header(); ?>
             
             <?php kroppsam_post_categories(); ?>
 
-            <?php if ( has_post_thumbnail() ) : ?>
-                <figure class="post-featured-image">
-                    <?php the_post_thumbnail('full'); ?>
-                </figure>
-            <?php endif; ?>
+            <?php get_template_part( 'template-parts/image-hero' ); ?>
 
             <div class="entry-header-single">
                 <?php 
