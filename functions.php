@@ -111,7 +111,7 @@ add_action( 'customize_register', 'kroppsam_customize_register' );
  * Ta bort onödigt "skräp" från wp_head för snabbare och säkrare sida
  */
 function kroppsam_cleanup_head() {
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 100, 0 );
     remove_action( 'wp_head', 'wp_generator' );
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
