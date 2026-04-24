@@ -229,6 +229,11 @@ footer h2 {
     color: var(--white);
 }
 
+main a {
+    text-decoration: underline;
+    color: inherit;
+}
+
 main {
     padding-top: 1rem;
     margin: 0 var(--padding-main);
@@ -505,6 +510,7 @@ blockquote p {
     font-family: var(--font-serif);
     font-size: var(--l);
     color: var(--darkorange);
+    text-decoration: none;
 }
 
 .nav-title a:hover {
@@ -588,6 +594,10 @@ p.last-updated {
     margin: 0 0 .5rem 0;         /* Viktigt: nollställ marginaler */
     vertical-align: baseline;
     line-height: 125%;
+}
+
+.start p {
+    margin-top:1rem;
 }
 
 .thin {
@@ -863,7 +873,7 @@ a:focus {
     gap: 0rem;
     min-height: 0; /* Ingen fast höjd på små skärmar */
     height: auto;
-    margin-bottom: 0.5rem; /* Ger ett fast avstånd ner till rubriken */
+    margin-bottom: 1rem; /* Ger ett fast avstånd ner till rubriken */
 }
 
 @media (min-width: 800px) {
