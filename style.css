@@ -775,10 +775,10 @@ a:focus {
 .glass-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* Tvingar ALLA bilder till 16:9 format */
+    padding-top: 56.25%;
     overflow: hidden;
     background-color: #000;
-    margin-bottom: 20px; /* Mellanrum mellan inlägg */
+    margin-bottom: 1.5rem;
 }
 
 .glass-background {
@@ -789,8 +789,8 @@ a:focus {
     height: 100%;
     background-size: cover;
     background-position: center;
-    filter: blur(20px) brightness(0.6);
-    transform: scale(1.1);
+    filter: blur(1.25rem) brightness(0.8);
+    transform: scale(1.3);
     z-index: 1;
 }
 
@@ -800,21 +800,91 @@ a:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    
-    /* Detta gör att bilden aldrig beskärs, oavsett form */
     max-width: 100% !important;
     max-height: 100% !important;
     width: auto !important;
     height: auto !important;
-    
-    /* Safari-säkerhet */
     object-fit: contain !important;
 }
 
-/* Valfritt: Om bilden är liggande kan vi göra bakgrunden mindre suddig 
-   eller dölja den helt om man föredrar att bilden täcker allt */
 .is-landscape .glass-foreground {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Liggande bilder fyller ut boxen helt */
+    object-fit: cover !important;
+}
+
+
+
+/* Container för rutnätet */
+.all-posts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--padding-main) 2rem;
+    list-style: none;
+    margin-top:0;
+    padding-top: 0;
+}
+
+/* Den enskilda puffen (kortet) */
+.post-card {
+    display: flex;
+    flex-direction: column;
+    /* 1 kolumn på mobil, 2 på surfplatta, 3 på desktop */
+    flex: 1 1 100%; 
+    border-bottom: var(--border-thin);
+    transition: var(--transition-fast);
+    margin-top:0;
+    padding-top: 0;
+}
+
+@media (min-width: 800px) {
+    .post-card {
+        flex: 1 1 calc(50% - 1rem); /* 2 kolumner */
+    }
+}
+
+
+/* Bilden i kortet */
+.card-image .glass-container {
+    padding-top: 56.25%; /* Behåller 16:9 ratio även i rutnätet */
+    margin-bottom: 0;
+}
+
+/* Innehållet i kortet */
+.card-content {
+    padding: .25rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    min-height: 0; /* Ingen fast höjd på små skärmar */
+    height: auto;
+    margin-bottom: 0.5rem; /* Ger ett fast avstånd ner till rubriken */
+}
+
+@media (min-width: 800px) {
+    .card-meta {
+        /* Här aktiverar vi den fasta höjden för att rubrikerna ska börja på samma rad */
+        min-height: 3.5rem; 
+        justify-content: flex-end; /* Trycker ner innehållet mot rubriken */
+    }
+}
+
+.article-header-link {
+    /* Denna hamnar i andra grid-raden */
+}
+
+
+.post-card .entry-title {
+    font-size: var(--m); /* Något mindre rubrik i rutnätet */
+    line-height: 1.3;
+}
+
+/* Hover-effekt på hela kortet */
+.post-card:hover {
+    opacity: 0.8;
 }

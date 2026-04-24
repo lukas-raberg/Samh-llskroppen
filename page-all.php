@@ -5,15 +5,14 @@ Template Name: Lista alla inlägg
 get_header(); ?>
 
 <main id="primary-content">
-    <ul class="all-posts-list">
+    <ul class="all-posts-grid"> 
         <?php
         $args = array(
-            'post_type'          => 'post',
-            'post_status'        => 'publish',
-            'posts_per_page'     => -1, 
-            'orderby'            => 'menu_order', 
-            'order'              => 'ASC',
-            'ignore_custom_sort' => false,
+            'post_type'      => 'post',
+            'post_status'    => 'publish',
+            'posts_per_page' => -1,
+            'orderby'        => 'menu_order',
+            'order'          => 'ASC',
         );
 
         $all_posts_query = new WP_Query($args);
@@ -21,34 +20,35 @@ get_header(); ?>
         if ($all_posts_query->have_posts()) :
             while ($all_posts_query->have_posts()) : $all_posts_query->the_post(); ?>
                 
-                <li class="list-all">
-                    
-                    <?php kroppsam_post_categories( 'theme-small' ); ?>
+                <li class="post-card"> 
+<!--
+                    <div class="card-image">
+                        <?php /* get_template_part( 'template-parts/image-hero' ); */ ?> 
+                    </div>
+-->
+                <div class="card-content">
+                    <div class="card-meta"> <?php kroppsam_post_categories( 'theme-small' ); ?>
 
-                    <?php
-                    $tags = get_the_tags();
-                    if ( ! empty( $tags ) ) {
-                        echo '<span class="category-wrapper-small">'; 
-                            $tag_output = array();
-                            foreach ( $tags as $tag ) {
-                                $tag_output[] = esc_html( $tag->name );
-                            }
-                            echo implode( ', ', $tag_output );
-                        echo '</span>';
-                    }
-                    ?>
+                        <?php
+                        $tags = get_the_tags();
+                        if ( ! empty( $tags ) ) {
+                            echo '<span class="category-wrapper-small">'; 
+                            echo implode( ', ', wp_list_pluck( $tags, 'name' ) );
+                            echo '</span>';
+                        }
+                        ?>
+                    </div>
 
-                    <a href="<?php echo esc_url( get_permalink() ); ?>" class="article-header-link">
+                    <a href="<?php the_permalink(); ?>" class="article-header-link">
                         <h2 class="entry-title"><?php the_title(); ?></h2>
                     </a>
+                </div>
 
                 </li>
 
             <?php endwhile;
             wp_reset_postdata(); 
-        else : ?>
-            <p>Inga inlägg hittades.</p>
-        <?php endif; ?>
+        endif; ?>
     </ul>
 </main>
 
