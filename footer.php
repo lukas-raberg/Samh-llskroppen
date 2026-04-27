@@ -1,4 +1,11 @@
     <footer>
+        <div class="coming-edition">
+            <div class="footer-inner">
+                Kommande nummer:<br />
+                <strong><span class="orange">Rasism, migration och hälsa, 1/11 2026</span></strong>
+            </div>
+        </div>
+
         <div class="footer-inner">
                 <p class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a></p>
                 <p class="subtitle"><?php bloginfo( 'description' ); ?></p>

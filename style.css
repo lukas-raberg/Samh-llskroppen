@@ -255,8 +255,22 @@ main {
 footer {
     background: var(--darkgray);
     margin: var(--section-margin) 0 0 0;
-    padding: 2.25rem var(--padding-main);
+    padding: 0;
     border-right: var(--border-thick);
+}
+
+.coming-edition {
+    background-color: var(--black);
+    color: var(--offwhite);
+    font-size: var(--l);
+}
+
+.footer-inner {
+    padding:3.25rem var(--padding-main);
+}
+
+.orange {
+    color: var(--orange);
 }
 
 .end {
