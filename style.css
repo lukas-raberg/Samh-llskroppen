@@ -788,7 +788,7 @@ a:focus {
     padding-top: 56.25%;
     overflow: hidden;
     background-color: #000;
-    margin-bottom: 1.5rem;
+    margin-bottom: .25rem;
 }
 
 .glass-background {
@@ -888,7 +888,6 @@ a:focus {
     /* Denna hamnar i andra grid-raden */
 }
 
-
 .post-card .entry-title {
     font-size: var(--m); /* Något mindre rubrik i rutnätet */
     line-height: 1.3;
@@ -897,4 +896,21 @@ a:focus {
 /* Hover-effekt på hela kortet */
 .post-card:hover {
     opacity: 0.8;
+}
+
+.hero-caption {
+    font-size: var(--xxs);
+    color: var(--gray);
+    height: 2rem;
+    display: flex;
+    align-items: center; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hero-caption.has-text {
+    padding-bottom: 1.5rem;
+    height: auto; 
+    min-height: 2rem;
 }
