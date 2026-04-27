@@ -22,7 +22,7 @@
                 ?>
                 <hr>
                 <aside aria-label="Juridisk information">
-                    <p>© Rättigheter. Anvsvarig utgivare(?).</p>
+                    <p>© Copyright 2026. Alla rättigheter förbehållna. Citera gärna med tydlig källhänvisning och länk, men kopiera inte hela texter eller bilder.</p>
                 </aside>
         </div>
     </footer>
