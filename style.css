@@ -917,12 +917,12 @@ a:focus {
 .hero-caption {
     font-size: var(--xxs);
     color: var(--gray);
-    height: 2rem;
-    display: flex;
-    align-items: center; 
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    display: flex; 
+    white-space: normal;
+    min-height: 2rem;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.4;
 }
 
 .hero-caption.has-text {
